@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Automation Test Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,61 +20,79 @@
             overflow: hidden;
         }
         header {
-            background: #4CAF50;
+            background: linear-gradient(90deg, #005f73, #0a9396);
             color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #388E3C 3px solid;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: #005f73 3px solid;
         }
-        header a {
-            color: #fff;
-            text-decoration: none;
+        header h1 {
+            margin: 0;
+            font-size: 3em;
             text-transform: uppercase;
-            font-size: 16px;
         }
-        header ul {
+        nav {
+            margin-top: 10px;
+        }
+        nav ul {
             padding: 0;
             list-style: none;
+            text-align: center;
         }
-        header li {
+        nav li {
             display: inline;
             padding: 0 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #d5d5d5;
         }
         .main-header {
             text-align: center;
             padding: 50px 0;
-        }
-        .main-header h1 {
-            margin: 0;
-            font-size: 3em;
-            color: #fff;
         }
         .content {
             padding: 20px;
             background: #fff;
             margin-bottom: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
         }
         .content h2 {
-            color: #4CAF50;
+            color: #005f73;
             margin-top: 0;
         }
         .content p, .content ul {
             color: #555;
         }
         .content a {
-            color: #4CAF50;
+            color: #0a9396;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         .content a:hover {
+            color: #005f73;
             text-decoration: underline;
+        }
+        .content ul {
+            padding-left: 20px;
         }
         footer {
             background: #333;
             color: #fff;
             text-align: center;
             padding: 20px;
-            position: fixed;
+            position: relative;
             bottom: 0;
             width: 100%;
         }
@@ -81,6 +100,45 @@
             .container {
                 width: 95%;
             }
+            header h1 {
+                font-size: 2em;
+            }
+        }
+        /* Additional Styles for Enhancements */
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+        .animated {
+            animation-duration: 0.5s;
+        }
+        .animated:hover {
+            animation-name: rubberBand;
+        }
+        /* Sliding Animation Classes */
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50%);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50%);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .slide-in-left.active, .slide-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
         }
     </style>
 </head>
@@ -88,29 +146,41 @@
     <header>
         <div class="container">
             <div class="main-header">
-                <h1>Automation Test Engineer</h1>
+                <h1 class="animated">Automation Test Engineer</h1>
             </div>
+            <nav>
+                <ul>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#summary">Summary</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#references">References</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <div class="container">
-        <section class="content">
+        <section id="contact" class="content slide-in-left">
             <h2>Contact Information</h2>
             <p><strong>Name:</strong> EzhilRaj</p>
             <p><strong>Email:</strong> <a href="mailto:ezhilrj24@gmail.com">ezhilrj24@gmail.com</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ezhil-raj-ab4664262/">Click here</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/yourprofile">Click here</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ezhil-raj-ab4664262/" target="_blank">Click here</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/yourprofile" target="_blank">Click here</a></p>
         </section>
 
-        <section class="content">
+        <section id="summary" class="content slide-in-right">
             <h2>Professional Summary</h2>
             <p>Dedicated and detail-oriented Automation Test Engineer with 2.7 years of experience in developing and executing automated test scripts. Proficient in using various automation tools and frameworks to ensure the quality and reliability of web and mobile applications. Adept at identifying, reporting, and managing defects to enhance software performance and user experience.</p>
         </section>
 
-        <section class="content">
+        <section id="skills" class="content slide-in-left">
             <h2>Skills</h2>
             <ul>
                 <li><strong>Automation Tools:</strong> Selenium, Appium</li>
+                <li><strong>Front End:</strong> HTML, CSS</li>
                 <li><strong>Programming Languages:</strong> Java, Python</li>
                 <li><strong>Testing Frameworks:</strong> TestNG, JUnit</li>
                 <li><strong>CI/CD Tools:</strong> Jenkins</li>
@@ -120,7 +190,7 @@
             </ul>
         </section>
 
-        <section class="content">
+        <section id="experience" class="content slide-in-right">
             <h2>Professional Experience</h2>
             <h3>Automation Test Engineer</h3>
             <p><strong>Fieldlytics Technologies Pvt Ltd, Chennai</strong></p>
@@ -149,14 +219,19 @@
             </ul>
         </section>
 
-        <section class="content">
+        <section id="education" class="content slide-in-left">
             <h2>Education</h2>
             <p><strong>Bachelor of Computer Applications</strong></p>
             <p>University of Madras, Chennai</p>
             <p>November 2022 – Current</p>
-        </section>
 
-        <section class="content">
+            <p><strong>Diploma in Mechanical Engineering</strong></p>
+            <p>V.Ramakrishna Polytechnic College, Chennai</p>
+            <p>2015 – 2017</p>
+        </section>
+        
+
+        <section id="projects" class="content slide-in-right">
             <h2>Projects</h2>
             <h3>REDIPAE Web Application</h3>
             <ul>
@@ -176,12 +251,7 @@
             <p><strong>Tools used:</strong> Appium, Java, Jenkins.</p>
         </section>
 
-        <section class="content">
-            <h2>Portfolio Links</h2>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ezhil-raj-ab4664262/">Click here</a></p>
-        </section>
-
-        <section class="content">
+        <section id="references" class="content slide-in-left">
             <h2>References</h2>
             <p>Available upon request.</p>
         </section>
@@ -190,5 +260,42 @@
     <footer>
         <p>&copy; 2024 EzhilRaj. All rights reserved.</p>
     </footer>
+
+    <!-- Optional JavaScript for Smooth Scroll -->
+    <script>
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Slide-in Animation Trigger
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.content');
+            const options = {
+                root: null,
+                threshold: 0.2,
+                rootMargin: '0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
